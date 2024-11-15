@@ -8,7 +8,7 @@ document.getElementById("registerForm").addEventListener("submit", async (event)
     
     try {
         // Realizamos la llamada a la API de registro (URL de Azure Functions se configurará más adelante)
-        const response = await fetch("URL_DE_LA_FUNCTION_REGISTRO", {
+        const response = await fetch("/api/register", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -31,7 +31,7 @@ document.getElementById("registerForm").addEventListener("submit", async (event)
 document.getElementById("fetchUsersBtn").addEventListener("click", async () => {
     try {
         // Realizamos la llamada a la API de consulta de usuarios
-        const response = await fetch("URL_DE_LA_FUNCTION_CONSULTA");
+        const response = await fetch("/api/users");
         
         if (response.ok) {
             const users = await response.json();
